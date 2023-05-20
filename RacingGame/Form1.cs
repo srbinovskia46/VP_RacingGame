@@ -26,13 +26,14 @@ namespace RacingGame
         private int aiCarSpawnIntervalMax = 2500; // Maximum spawn interval
         private int timeSinceLastSpawn = 0;
         private int aiCarSpawnInterval;
-        private Random randomInterval = new Random();
+
+        
 
         public Form1()
         {
             InitializeComponent();
             InitializeGame();
-            ClientSize = new Size(300, 600); // Adjust the width and height as needed
+            ClientSize = new Size(300, 600);
 
             BackColor = Color.DimGray;
             DoubleBuffered = true;
@@ -46,7 +47,7 @@ namespace RacingGame
             backgroundPositionY = 0;
 
             // Create the player car
-            playerCar = new PlayerCar(225, 500, 50, 100, 10, Color.GreenYellow);
+            playerCar = new PlayerCar(125, 500, 50, 100, 10, Color.GreenYellow);
 
             // Create the scene
             scene = new Scene(ClientSize.Width, ClientSize.Height);
@@ -69,18 +70,7 @@ namespace RacingGame
             }
 
             // Check collision between player car and AI cars
-            Rectangle playerBounds = playerCar.GetBounds();
-            foreach (var aiCar in scene.aiCars)
-            {
-                Rectangle aiBounds = aiCar.GetBounds();
-                if (playerBounds.IntersectsWith(aiBounds))
-                {
-                    // Collision detected
-                    isGameOver = true;
-                    EndGame();
-                    return;
-                }
-            }
+            PerformCollisionDetection();
 
 
             // Update the position of the background
@@ -119,15 +109,6 @@ namespace RacingGame
 
             // Redraw the game window
             Invalidate();
-        }
-
-        void EndGame()
-        {
-            // Show a message
-            MessageBox.Show("Game Over! You collided with an AI car.");
-
-            // Stop the game
-            return;
         }
 
         private void PerformCollisionDetection()
@@ -200,12 +181,10 @@ namespace RacingGame
             scene.aiCars.Add(aiCar);
         }
 
-
-
-
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
+
 
             // Draw the background
             Brush brush = new SolidBrush(Color.DimGray);
@@ -262,6 +241,5 @@ namespace RacingGame
                 playerCar.MoveRight();
             }
         }
-
     }
 }

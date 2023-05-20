@@ -30,11 +30,24 @@ namespace RacingGame
         public void MoveLeft()
         {
             X -= Speed;
+
+            // Check if X is out of border
+            if (X <= 0)
+            {
+                X = 0;
+            }
+ 
         }
 
         public void MoveRight()
         {
+            
             X += Speed;
+
+            if (X >= 260)
+            {
+                X = 260;
+            }
         }
 
         public void Draw(Graphics g)
@@ -63,7 +76,7 @@ namespace RacingGame
 
         internal void Reset()
         {
-            X = 225;
+            X = 125;
             Y = 500;
         }
     }
