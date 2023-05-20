@@ -58,8 +58,8 @@ namespace RacingGame
 
         public void Update()
         {
-            // Here's a simple example where an AI car is spawned randomly every few frames
-            if (random.Next(0, 300) < 3) // Adjust the probability as needed
+
+            if (random.Next(0, 300) < 3)
             {
                 SpawnAICar();
             }

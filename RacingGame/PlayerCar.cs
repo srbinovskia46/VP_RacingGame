@@ -44,29 +44,17 @@ namespace RacingGame
             
             X += Speed;
 
-            if (X >= 260)
+            // Check if X is out of border
+            if (X > 250)
             {
-                X = 260;
+                X = 250;
             }
         }
 
         public void Draw(Graphics g)
         {
-            /*using (Brush brush = new SolidBrush(Color))
-            {
-                g.FillRectangle(brush, X, Y, Width, Height);
-            }*/
             Brush brush = new SolidBrush(Color);
             g.FillRectangle(brush, X, Y, Width, Height);
-        }
-
-        public void Update()
-        {
-            // Update logic for the player car
-            // For example, you might check for user input or perform collision detection
-
-            // Here's a simple example where the player car moves based on keyboard input
-            
         }
 
         public Rectangle GetBounds()
@@ -74,7 +62,7 @@ namespace RacingGame
             return new Rectangle(X, Y, Width, Height);
         }
 
-        internal void Reset()
+        public void Reset()
         {
             X = 125;
             Y = 500;

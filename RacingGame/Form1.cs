@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,7 +26,6 @@ namespace RacingGame
         private int aiCarSpawnInterval;
 
         
-
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +35,6 @@ namespace RacingGame
             BackColor = Color.DimGray;
             DoubleBuffered = true;
             random = new Random();
-
         }
 
         private void InitializeGame()
@@ -72,7 +68,6 @@ namespace RacingGame
             // Check collision between player car and AI cars
             PerformCollisionDetection();
 
-
             // Update the position of the background
             backgroundPositionY += backgroundSpeed;
 
@@ -82,9 +77,6 @@ namespace RacingGame
                 // Reset the background position
                 backgroundPositionY = 0;
             }
-
-            // Update the player car
-            playerCar.Update();
 
             // Update the AI cars
             foreach (var aiCar in scene.aiCars)
@@ -184,7 +176,6 @@ namespace RacingGame
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-
 
             // Draw the background
             Brush brush = new SolidBrush(Color.DimGray);

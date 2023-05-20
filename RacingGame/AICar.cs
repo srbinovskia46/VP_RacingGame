@@ -34,7 +34,6 @@ namespace RacingGame
 
         public void Update()
         {
-            // Update logic for the AI car
             MoveDown();
         }
 
