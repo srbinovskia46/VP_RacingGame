@@ -55,5 +55,16 @@ namespace RacingGame
             // Here's a simple example where the player car moves based on keyboard input
             
         }
+
+        public Rectangle GetBounds()
+        {
+            return new Rectangle(X, Y, Width, Height);
+        }
+
+        internal void Reset()
+        {
+            X = 225;
+            Y = 500;
+        }
     }
 }

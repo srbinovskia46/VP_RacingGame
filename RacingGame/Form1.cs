@@ -19,8 +19,10 @@ namespace RacingGame
         private Scene scene;
         Random random;
 
+        private bool isGameOver = false;
+
         // Milliseconds between AI car spawns
-        private int aiCarSpawnIntervalMin = 1500; // Minimum spawn interval
+        private int aiCarSpawnIntervalMin = 1000; // Minimum spawn interval
         private int aiCarSpawnIntervalMax = 2500; // Maximum spawn interval
         private int timeSinceLastSpawn = 0;
         private int aiCarSpawnInterval;
@@ -30,7 +32,7 @@ namespace RacingGame
         {
             InitializeComponent();
             InitializeGame();
-            ClientSize = new Size(500, 600); // Adjust the width and height as needed
+            ClientSize = new Size(300, 600); // Adjust the width and height as needed
 
             BackColor = Color.DimGray;
             DoubleBuffered = true;
@@ -44,22 +46,43 @@ namespace RacingGame
             backgroundPositionY = 0;
 
             // Create the player car
-            playerCar = new PlayerCar(225, 500, 50, 100, 10, Color.Red);
+            playerCar = new PlayerCar(225, 500, 50, 100, 10, Color.GreenYellow);
 
             // Create the scene
             scene = new Scene(ClientSize.Width, ClientSize.Height);
             scene.AddPlayerCar(playerCar);
 
-            // Set up the game loop
+            // Set up the game loop timer
             var gameTimer = new Timer();
             gameTimer.Interval = 16; // 60 FPS
             gameTimer.Tick += GameLoop;
             gameTimer.Start();
-
         }
+
 
         private void GameLoop(object sender, EventArgs e)
         {
+            // Stop updating the game if it's over
+            if (isGameOver)
+            {
+                return;
+            }
+
+            // Check collision between player car and AI cars
+            Rectangle playerBounds = playerCar.GetBounds();
+            foreach (var aiCar in scene.aiCars)
+            {
+                Rectangle aiBounds = aiCar.GetBounds();
+                if (playerBounds.IntersectsWith(aiBounds))
+                {
+                    // Collision detected
+                    isGameOver = true;
+                    EndGame();
+                    return;
+                }
+            }
+
+
             // Update the position of the background
             backgroundPositionY += backgroundSpeed;
 
@@ -79,6 +102,7 @@ namespace RacingGame
                 aiCar.Update();
             }
 
+
             // Spawn new AI cars at random intervals
             timeSinceLastSpawn += 16;
             if (timeSinceLastSpawn >= aiCarSpawnInterval)
@@ -89,6 +113,66 @@ namespace RacingGame
                 // Generate a new random spawn interval for the next AI car
                 aiCarSpawnInterval = random.Next(aiCarSpawnIntervalMin, aiCarSpawnIntervalMax);
             }
+
+            // Perform collision detection
+            PerformCollisionDetection();
+
+            // Redraw the game window
+            Invalidate();
+        }
+
+        void EndGame()
+        {
+            // Show a message
+            MessageBox.Show("Game Over! You collided with an AI car.");
+
+            // Stop the game
+            return;
+        }
+
+        private void PerformCollisionDetection()
+        {
+            Rectangle playerCarBounds = playerCar.GetBounds();
+
+            foreach (var aiCar in scene.aiCars)
+            {
+                Rectangle aiCarBounds = aiCar.GetBounds();
+
+                if (playerCarBounds.IntersectsWith(aiCarBounds))
+                {
+                    // Collision detected
+                    isGameOver = true;
+                    DialogResult dr = MessageBox.Show("You collided with another car.\nDo you want to play again?", "Game Over!" ,MessageBoxButtons.YesNo);
+                    if (dr == DialogResult.Yes)
+                    {
+                        ResetGame();
+                    }
+                    else
+                    {
+                        Close();
+                    }
+                    break;
+                }
+            }
+        }
+
+        void ResetGame()
+        {
+            // Reset game state and variables
+            isGameOver = false;
+
+            // Reset background position
+            backgroundPositionY = 0;
+
+            // Reset player car
+            playerCar.Reset();
+
+            // Clear AI cars from the scene
+            scene.aiCars.Clear();
+
+            // Reset AI car spawn interval
+            timeSinceLastSpawn = 0;
+            aiCarSpawnInterval = random.Next(aiCarSpawnIntervalMin, aiCarSpawnIntervalMax);
 
             // Redraw the game window
             Invalidate();
@@ -163,6 +247,12 @@ namespace RacingGame
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            // Ignore input if the game is over
+            if (isGameOver)
+            {
+                return; 
+            }
+
             if (e.KeyCode == Keys.Left)
             {
                 playerCar.MoveLeft();

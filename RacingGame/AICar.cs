@@ -42,6 +42,11 @@ namespace RacingGame
         {
             Y += Speed;
         }
+
+        public Rectangle GetBounds()
+        {
+            return new Rectangle(X, Y, Width, Height);
+        }
     }
 }
 
