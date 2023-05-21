@@ -15,21 +15,23 @@ namespace RacingGame
         public int Height { get; set; }
         public int Speed { get; set; }
         public Color Color { get; set; }
+        public Image carImage { get; set; }
 
-        public AICar(int x, int y, int width, int height, int speed, Color color)
+        public AICar(int x, int y, int width, int height, int speed, Image aiCar)
         {
             X = x;
             Y = y;
             Width = width;
             Height = height;
             Speed = speed;
-            Color = color;
+            carImage = aiCar;
         }
 
         public void Draw(Graphics g)
         {
-            Brush brush = new SolidBrush(Color);
-            g.FillRectangle(brush, X, Y, Width, Height);
+            //Brush brush = new SolidBrush(Color);
+            //g.FillRectangle(brush, X, Y, Width, Height);
+            g.DrawImage(carImage, X, Y, Width, Height);
         }
 
         public void Update()

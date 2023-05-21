@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,6 @@ namespace RacingGame
         private PlayerCar playerCar;
         private Scene scene;
         private int score = 0;
-        private bool dali=false;
         private int coinscount = 0;
         Random random;
 
@@ -28,14 +28,13 @@ namespace RacingGame
         private int timeSinceLastSpawn = 0;
         private int aiCarSpawnInterval;
 
-        
         public Form1()
         {
             InitializeComponent();
             InitializeGame();
             ClientSize = new Size(300, 600);
 
-            BackColor = Color.DimGray;
+            BackColor = Color.FromArgb(130, 137, 155);
             DoubleBuffered = true;
             random = new Random();
         }
@@ -45,8 +44,12 @@ namespace RacingGame
             // Set the initial position of the background
             backgroundPositionY = 0;
 
+            // Load the car image
+            string imagePath = "./Resources/playerCar.png";
+            Image carImage = Image.FromFile(imagePath);
+
             // Create the player car
-            playerCar = new PlayerCar(125, 500, 50, 100, 10, Color.GreenYellow);
+            playerCar = new PlayerCar(225, 500, 50, 90, 10, carImage);
 
             // Create the scene
             scene = new Scene(ClientSize.Width, ClientSize.Height);
@@ -69,8 +72,8 @@ namespace RacingGame
             }
             // Updating the score
             score++;
-            label1.Text ="Score:"+ score.ToString();
-            label2.Text ="Coins collected:"+coinscount.ToString();
+            label1.Text ="Score: "+ score.ToString();
+            label2.Text ="Coins collected: "+coinscount.ToString();
             // Check collision between player car and AI cars
             PerformCollisionDetection();
 
@@ -148,7 +151,7 @@ namespace RacingGame
                 {
                     // Collision detected
                     isGameOver = true;
-                    DialogResult dr = MessageBox.Show("You collided with another car.\n Your score is "+score+"\nYou've collected "+coinscount+" coins.\nDo you want to play again?", "Game Over!" ,MessageBoxButtons.YesNo);
+                    DialogResult dr = MessageBox.Show("You collided with another car.\nYour score is "+score+"\nYou've collected "+coinscount+" coins.\nDo you want to play again?", "Game Over!" ,MessageBoxButtons.YesNo);
                     if (dr == DialogResult.Yes)
                     {
                         ResetGame();
@@ -240,10 +243,16 @@ namespace RacingGame
 
             // Create a new AI car at the top of the screen
             int carWidth = 50;
-            int carHeight = 100;
+            int carHeight = 90;
             int carSpeed = 3;
-            Color carColor = Color.Blue;
-            AICar aiCar = new AICar(laneX - carWidth / 2, -carHeight, carWidth, carHeight, carSpeed, carColor);
+
+            // Get a random car image from the Resources folder
+            string[] carImages = { "Resources/aiCar1.png", "Resources/aiCar2.png", "Resources/aiCar3.png" }; // Update with your car image filenames
+            int randomIndex = random.Next(0, carImages.Length);
+            Image carImage = Image.FromFile(carImages[randomIndex]);
+
+            // Create the AI car using the car image
+            AICar aiCar = new AICar(laneX - carWidth / 2, -carHeight, carWidth, carHeight, carSpeed, carImage);
 
             // Add the AI car to the scene
             scene.aiCars.Add(aiCar);
@@ -254,7 +263,7 @@ namespace RacingGame
             base.OnPaint(e);
 
             // Draw the background
-            Brush brush = new SolidBrush(Color.DimGray);
+            Brush brush = new SolidBrush(Color.FromArgb(130, 137, 155));
             e.Graphics.FillRectangle(brush, 0, 0, Width, Height);
 
             // Calculate the interpolated position of the lanes

@@ -1,7 +1,6 @@
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\RacingGame.exe.config
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\RacingGame.exe
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\RacingGame.pdb
-D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.csproj.AssemblyReference.cache
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.Properties.Resources.resources
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.csproj.GenerateResource.cache
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.csproj.CoreCompileInputs.cache
@@ -30,3 +29,7 @@ C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.cspr
 C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.CoreCompileInputs.cache
 C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.exe
 C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.pdb
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\playerCar.png
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar1.png
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar2.png
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar3.png

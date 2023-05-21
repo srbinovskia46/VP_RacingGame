@@ -15,16 +15,16 @@ namespace RacingGame
         public int Width { get; set; }
         public int Height { get; set; }
         public int Speed { get; set; }
-        public Color Color { get; set; }
+        public Image carImage { get; set; }
 
-        public PlayerCar(int x, int y, int width, int height, int speed, Color color)
+        public PlayerCar(int x, int y, int width, int height, int speed, Image playerCar)
         {
             X = x;
             Y = y;
             Width = width;
             Height = height;
             Speed = speed;
-            Color = color;
+            carImage = playerCar;
         }
 
         public void MoveLeft()
@@ -53,8 +53,7 @@ namespace RacingGame
 
         public void Draw(Graphics g)
         {
-            Brush brush = new SolidBrush(Color);
-            g.FillRectangle(brush, X, Y, Width, Height);
+            g.DrawImage(this.carImage, X, Y, Width, Height);
         }
 
         public Rectangle GetBounds()
