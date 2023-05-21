@@ -35,3 +35,4 @@ D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar2
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar3.png
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar4.png
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar5.png
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.csproj.AssemblyReference.cache

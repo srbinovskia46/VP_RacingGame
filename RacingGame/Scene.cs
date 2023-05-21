@@ -99,33 +99,16 @@ namespace RacingGame
 
         public void Update()
         {
-
-            if (random.Next(0, 300) < 3)
-            {
-                SpawnAICar();
-                SpawnAICoin();
-            }
-
             // Update all AI cars and coins
             foreach (var aiCar in aiCars)
             {
                 aiCar.Update();
 
-                if (aiCar.Y > windowHeight)
-                {
-                    // Respawn the AI car at the top
-                    aiCar.Y = -random.Next(100, 300);
-                }
             }
             foreach (var aicoin in acoins)
             {
                 aicoin.Update();
 
-                if (aicoin.Y > windowHeight)
-                {
-                    // Respawn the AI coin at the top
-                    aicoin.Y = -random.Next(100, 300);
-                }
             }
 
         }

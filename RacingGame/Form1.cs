@@ -49,7 +49,7 @@ namespace RacingGame
             Image carImage = Image.FromFile(imagePath);
 
             // Create the player car
-            playerCar = new PlayerCar(225, 500, 50, 90, 15, carImage);
+            playerCar = new PlayerCar(125, 500, 50, 90, 15, carImage);
 
             // Create the scene
             scene = new Scene(ClientSize.Width, ClientSize.Height);
@@ -74,6 +74,7 @@ namespace RacingGame
             score++;
             label1.Text ="Score: "+ score.ToString();
             label2.Text ="Coins collected: "+coinscount.ToString();
+
             // Check collision between player car and AI cars
             PerformCollisionDetection();
 
@@ -87,15 +88,7 @@ namespace RacingGame
                 backgroundPositionY = 0;
             }
 
-            // Update the AI cars and coins
-            foreach (var aiCar in scene.aiCars)
-            {
-                aiCar.Update();
-            }
-            foreach (var aiCoins in scene.acoins)
-            {
-                aiCoins.Update();
-            }
+            scene.Update();
 
 
             // Spawn new AI cars and coins at random intervals
