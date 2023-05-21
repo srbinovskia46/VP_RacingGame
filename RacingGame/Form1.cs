@@ -67,6 +67,7 @@ namespace RacingGame
             {
                 return;
             }
+            // Updating the score
             score++;
             label1.Text ="Score:"+ score.ToString();
             label2.Text ="Coins collected:"+coinscount.ToString();
@@ -159,6 +160,7 @@ namespace RacingGame
                     break;
                 }
             }
+            // Make sure the coin dissappears once it collides with the player car
             foreach(var aicoin in scene.acoins)
             {
                 Rectangle thecoin = aicoin.GetBounds();
@@ -170,6 +172,7 @@ namespace RacingGame
                     break;
                 }
             }
+            //Make sure the coins and cars don't spawn over eachother
             bool collisionDetected = false;
             Aicoins coinToRemove = null;
 
@@ -215,9 +218,8 @@ namespace RacingGame
             // Clear AI cars from the scene
             scene.aiCars.Clear();
             // Clear AI coins from the scene
-
             scene.acoins.Clear();
-            // Reset AI car spawn interval
+            // Reset AI car and coin spawn interval
             timeSinceLastSpawn = 0;
             aiCarSpawnInterval = random.Next(aiCarSpawnIntervalMin, aiCarSpawnIntervalMax);
 

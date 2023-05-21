@@ -31,6 +31,9 @@ namespace RacingGame
         {
             Brush brush = new SolidBrush(Color);
             g.FillEllipse(brush, X, Y, Width, Height);
+            Pen pen = new Pen(Color.Orange, 3);
+            g.DrawEllipse(pen, X, Y, Width, Height);
+            pen.Dispose();
         }
 
         public void Update()

@@ -19,3 +19,14 @@ C:\Users\Vasil\Downloads\Vizuelnotoa\VP_RacingGame\RacingGame\obj\Debug\RacingGa
 C:\Users\Vasil\Downloads\Vizuelnotoa\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.CoreCompileInputs.cache
 C:\Users\Vasil\Downloads\Vizuelnotoa\VP_RacingGame\RacingGame\obj\Debug\RacingGame.exe
 C:\Users\Vasil\Downloads\Vizuelnotoa\VP_RacingGame\RacingGame\obj\Debug\RacingGame.pdb
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\bin\Debug\RacingGame.exe.config
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\bin\Debug\RacingGame.exe
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\bin\Debug\RacingGame.pdb
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.AssemblyReference.cache
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.Form1.resources
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.Properties.Resources.resources
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.GenerateResource.cache
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.CoreCompileInputs.cache
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.exe
+C:\Users\Vasil\Downloads\KRAJ\VP_RacingGame\RacingGame\obj\Debug\RacingGame.pdb
