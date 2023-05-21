@@ -49,7 +49,7 @@ namespace RacingGame
             Image carImage = Image.FromFile(imagePath);
 
             // Create the player car
-            playerCar = new PlayerCar(225, 500, 50, 90, 10, carImage);
+            playerCar = new PlayerCar(225, 500, 50, 90, 15, carImage);
 
             // Create the scene
             scene = new Scene(ClientSize.Width, ClientSize.Height);
@@ -247,7 +247,13 @@ namespace RacingGame
             int carSpeed = 3;
 
             // Get a random car image from the Resources folder
-            string[] carImages = { "Resources/aiCar1.png", "Resources/aiCar2.png", "Resources/aiCar3.png" }; // Update with your car image filenames
+            string[] carImages = { 
+                "Resources/aiCar1.png",
+                "Resources/aiCar2.png",
+                "Resources/aiCar3.png",
+                "Resources/aiCar4.png",
+                "Resources/aiCar5.png" };
+
             int randomIndex = random.Next(0, carImages.Length);
             Image carImage = Image.FromFile(carImages[randomIndex]);
 
@@ -321,11 +327,6 @@ namespace RacingGame
             {
                 playerCar.MoveRight();
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

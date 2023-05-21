@@ -33,3 +33,5 @@ D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\player
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar1.png
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar2.png
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar3.png
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar4.png
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar5.png

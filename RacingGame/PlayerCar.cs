@@ -58,7 +58,7 @@ namespace RacingGame
 
         public Rectangle GetBounds()
         {
-            return new Rectangle(X, Y, Width, Height);
+            return new Rectangle(X, Y, Width, Height+5);
         }
 
         public void Reset()
