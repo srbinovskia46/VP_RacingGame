@@ -15,6 +15,9 @@ namespace RacingGame
         private int backgroundSpeed = 5;
         private PlayerCar playerCar;
         private Scene scene;
+        private int score = 0;
+        private bool dali=false;
+        private int coinscount = 0;
         Random random;
 
         private bool isGameOver = false;
@@ -64,7 +67,9 @@ namespace RacingGame
             {
                 return;
             }
-
+            score++;
+            label1.Text ="Score:"+ score.ToString();
+            label2.Text ="Coins collected:"+coinscount.ToString();
             // Check collision between player car and AI cars
             PerformCollisionDetection();
 
@@ -78,18 +83,23 @@ namespace RacingGame
                 backgroundPositionY = 0;
             }
 
-            // Update the AI cars
+            // Update the AI cars and coins
             foreach (var aiCar in scene.aiCars)
             {
                 aiCar.Update();
             }
+            foreach (var aiCoins in scene.acoins)
+            {
+                aiCoins.Update();
+            }
 
 
-            // Spawn new AI cars at random intervals
+            // Spawn new AI cars and coins at random intervals
             timeSinceLastSpawn += 16;
             if (timeSinceLastSpawn >= aiCarSpawnInterval)
             {
                 SpawnAICar();
+                SpawnAICoin();
                 timeSinceLastSpawn = 0;
 
                 // Generate a new random spawn interval for the next AI car
@@ -101,6 +111,28 @@ namespace RacingGame
 
             // Redraw the game window
             Invalidate();
+        }
+
+        private void SpawnAICoin()
+        {
+            int laneCount = 3;
+            int laneWidth = ClientSize.Width / laneCount;
+
+            // Generate a random lane index
+            int laneIndex = random.Next(0, laneCount);
+
+            // Calculate the X position based on the selected lane
+            int laneX = laneIndex * laneWidth + laneWidth / 2;
+
+            // Create a new AI coin at the top of the screen
+            int coinWidth = 25;
+            int coinHeight = 25;
+            int carSpeed = 3;
+            Color coinColor = Color.Yellow;
+            Aicoins aiCoin = new Aicoins(laneX - coinWidth / 2, -coinHeight, coinWidth, coinHeight, carSpeed, coinColor);
+
+            // Add the AI coin to the scene
+            scene.acoins.Add(aiCoin);
         }
 
         private void PerformCollisionDetection()
@@ -115,7 +147,7 @@ namespace RacingGame
                 {
                     // Collision detected
                     isGameOver = true;
-                    DialogResult dr = MessageBox.Show("You collided with another car.\nDo you want to play again?", "Game Over!" ,MessageBoxButtons.YesNo);
+                    DialogResult dr = MessageBox.Show("You collided with another car.\n Your score is "+score+"\nYou've collected "+coinscount+" coins.\nDo you want to play again?", "Game Over!" ,MessageBoxButtons.YesNo);
                     if (dr == DialogResult.Yes)
                     {
                         ResetGame();
@@ -127,22 +159,64 @@ namespace RacingGame
                     break;
                 }
             }
-        }
+            foreach(var aicoin in scene.acoins)
+            {
+                Rectangle thecoin = aicoin.GetBounds();
+                if(playerCarBounds.IntersectsWith(thecoin))
+                {
+                    aicoin.setlocation(200,400);
+                    coinscount++;
+                    scene.acoins.Remove(aicoin);
+                    break;
+                }
+            }
+            bool collisionDetected = false;
+            Aicoins coinToRemove = null;
 
+            foreach (var aicoin in scene.acoins)
+            {
+                Rectangle thecoin = aicoin.GetBounds();
+
+                foreach (var aicar in scene.aiCars)
+                {
+                    Rectangle thecar = aicar.GetBounds();
+
+                    if (thecoin.IntersectsWith(thecar))
+                    {
+                        collisionDetected = true;
+                        coinToRemove = aicoin;
+                        break;
+                    }
+                }
+
+                if (collisionDetected)
+                {
+                    break;
+                }
+            }
+
+            if (collisionDetected)
+            {
+                scene.acoins.Remove(coinToRemove);
+            }
+        }
+       
         void ResetGame()
         {
             // Reset game state and variables
             isGameOver = false;
-
+            score = 0;
             // Reset background position
             backgroundPositionY = 0;
-
+            coinscount = 0;
             // Reset player car
             playerCar.Reset();
 
             // Clear AI cars from the scene
             scene.aiCars.Clear();
+            // Clear AI coins from the scene
 
+            scene.acoins.Clear();
             // Reset AI car spawn interval
             timeSinceLastSpawn = 0;
             aiCarSpawnInterval = random.Next(aiCarSpawnIntervalMin, aiCarSpawnIntervalMax);
@@ -213,6 +287,11 @@ namespace RacingGame
             {
                 aiCar.Draw(e.Graphics);
             }
+            // Draw the AI coins
+            foreach (var aiCoin in scene.acoins)
+            {
+                aiCoin.Draw(e.Graphics);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -231,6 +310,11 @@ namespace RacingGame
             {
                 playerCar.MoveRight();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
