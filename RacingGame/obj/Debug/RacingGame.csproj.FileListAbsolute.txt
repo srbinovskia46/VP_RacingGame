@@ -36,3 +36,20 @@ D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar3
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar4.png
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\bin\Debug\Resources\aiCar5.png
 D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.csproj.AssemblyReference.cache
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\Resources\aiCar1.png
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\Resources\aiCar2.png
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\Resources\aiCar3.png
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\Resources\aiCar4.png
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\Resources\aiCar5.png
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\Resources\playerCar.png
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\RacingGame.exe.config
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\RacingGame.exe
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\bin\Debug\RacingGame.pdb
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.AssemblyReference.cache
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.Form1.resources
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.Properties.Resources.resources
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.GenerateResource.cache
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.CoreCompileInputs.cache
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.exe
+C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.pdb
