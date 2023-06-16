@@ -53,3 +53,5 @@ C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.Ge
 C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.csproj.CoreCompileInputs.cache
 C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.exe
 C:\Users\Vasil\Downloads\VP_RacingGame\RacingGame\obj\Debug\RacingGame.pdb
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.MainMenu.resources
+D:\FINKI\IV Semestar\VP\Project\RacingGame\RacingGame\obj\Debug\RacingGame.HowToPlay.resources
