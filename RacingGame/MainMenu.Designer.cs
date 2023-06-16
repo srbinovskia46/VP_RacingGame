@@ -81,7 +81,7 @@ namespace RacingGame
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainMenu";
+            this.Text = "Racing Game";
             this.ResumeLayout(false);
 
         }
