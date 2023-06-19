@@ -93,20 +93,21 @@ AICoins класата ги претставува паричките кој г�
 
 * Главно мени
 
-![MainMenu](https://github.com/srbinovskia46/VP_RacingGame/assets/108271909/f2569827-646f-4378-b173-73d7af339b05)
+![enter image description here](https://media.discordapp.net/attachments/774287566680621077/1120300871423623218/MainMenu.png?width=318&height=651)
 
 * Контролите на играта
 
-![HowToPlay](https://github.com/srbinovskia46/VP_RacingGame/assets/108271909/329d5cc3-95b9-43fa-8c07-235d1e6460b9)
+![enter image description here](https://media.discordapp.net/attachments/774287566680621077/1120300871130038282/HowToPlay.png?width=326&height=651)
+
 
 
 * Игра
 
-![RacingGameImage](https://github.com/srbinovskia46/VP_RacingGame/assets/108271909/4dbbce87-b25a-4acd-9a89-e45d085da483)
+![enter image description here](https://media.discordapp.net/attachments/774287566680621077/1120300870823841923/RacingGameImage.png?width=320&height=651)
 
 * Порака при колизија
 
-![RacingGameGameOver](https://github.com/srbinovskia46/VP_RacingGame/assets/108271909/17a2fb9a-1878-400d-bbb5-cbf436fa77c0)
+![enter image description here](https://media.discordapp.net/attachments/774287566680621077/1120300871683674153/RacingGameGameOver.png?width=310&height=248)
 
 ---
 Контроли за играта:
